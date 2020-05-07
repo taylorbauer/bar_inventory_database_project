@@ -18,8 +18,8 @@ error_reporting(E_ALL);
 
 <?php
     $mysqli = new mysqli("mysql.eecs.ku.edu", "taylorbauer", "uuth3waN", "taylorbauer");
-    $name = $_REQUEST['key'];
-    $query = "SELECT  * FROM SPIRIT, CURRENT_INVENTORY WHERE name LIKE '%" . $name .  "%' AND SPIRIT.spiritID = CURRENT_INVENTORY.spiritID ";
+    $shelf = $_REQUEST['key2'];
+    $query = "SELECT  * FROM SPIRIT, CURRENT_INVENTORY WHERE shelf LIKE '%" . $shelf .  "%' AND SPIRIT.spiritID = CURRENT_INVENTORY.spiritID";
     if ($result = $mysqli->query($query)) {
 
     echo "<table><caption>List of spirits</caption>";

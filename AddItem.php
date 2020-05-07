@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $price_per_bottle = $_POST["price_per_bottle"];
     $most_recent_purchase = $_POST["most_recent_purchase"];
     $shelf  = $_POST["shelf"];
+    // $current_count = $_POST["current_count"];
 }
 
 $mysqli = new mysqli("mysql.eecs.ku.edu", "taylorbauer", "uuth3waN", "taylorbauer");
@@ -34,6 +35,6 @@ else{
 }
 
 echo "<p><form><button type=\"submit\" formaction=\"AddItem.html\">Add another spirit</button></form></p>";
-echo "<p><form><button type=\"submit\" formaction=\"AddItem.html\">Add another spirit</button></form></p>";
+echo "<p><form><button type=\"submit\" formaction=\"index.html\">Go Home</button></form></p>";
 
  ?>

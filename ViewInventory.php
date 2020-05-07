@@ -18,12 +18,12 @@ if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
 } 
 
-$query = "SELECT * FROM SPIRIT";
+$query = "SELECT * FROM SPIRIT, CURRENT_INVENTORY WHERE SPIRIT.spiritID = CURRENT_INVENTORY.spiritID";
  
 if ($result = $mysqli->query($query)) {
 
-    echo "<table><caption>List of spirits</caption>";
-    echo "<tr><th>Distiller</th><th>Spirit</th><th>Price Per Bottle</th><th>Most Recent Purchase</th><th>Shelf</th></tr>";
+    echo "<table><caption>Current Inventory</caption>";
+    echo "<tr><th>Distiller</th><th>Spirit</th><th>Price Per Bottle</th><th>Most Recent Purchase</th><th>Shelf</th><<th>Current Count</th></tr>";
 
     while ($row = $result->fetch_assoc()) {
         $distiller = $row["distiller"];
@@ -31,8 +31,9 @@ if ($result = $mysqli->query($query)) {
         $price_per_bottle = $row["price_per_bottle"];
         $most_recent_purchase = $row["most_recent_purchase"];
         $shelf = $row["shelf"];
+        $current_count = $row["current_count"];
 
-        echo "<tr><td>" . $distiller . "</td><td>" . $name . "</td><td>" . $price_per_bottle . "</td><td>" . $most_recent_purchase . "</td><td>" . $shelf . "</td></tr>";        
+        echo "<tr><td>" . $distiller . "</td><td>" . $name . "</td><td>" . $price_per_bottle . "</td><td>" . $most_recent_purchase . "</td><td>" . $shelf . "</td><td>" . $current_count . "</td></tr>";        
     }
 
     echo "</table>";
