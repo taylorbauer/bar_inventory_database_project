@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="myStyle.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+<title>Add Inventory Item</title>
+
+</head>
+<body>
+<h1>Add Spirit to Inventory</h1>
+<form id="AddItem" action="AddItem.php.php" method="post">
+<!-- <p>Enter username: <input id="username" name="username" type="text"></p> -->
+<p>Distiller name: <input id="distiller" name="distiller" type="text"></p>
+<p>Spirit name: <input id="name" name="name" type="text"></p>
+<p>Price per bottle: <input id="price_per_bottle" name="price_per_bottle" type="text"></p>
+<p>Most Recent Purchase Date: <input id="most_recent_purchase" name="most_recent_purchase" type="date"></p>
+<p>Shelf (well, call, or premium): <input id="shelf" name="shelf" type="text"></p>
+<input type="submit"></form>
+<form><button type="submit" formaction="index.html">Back to Home</button></form>
+</body></html>
+
+<!-- 
+CODE FOR CREATING DATABASE 
+
+create table SHELF (
+ name varchar(255) unique,
+ price_per_pour decimal(13,5)
+);
+ 
+create table SPIRIT (
+ spiritID int unique auto_increment not null,
+ distiller varchar(255) not null,
+ name varchar(255) not null,
+ price_per_bottle decimal(13,5),
+ most_recent_purchase date,
+ shelf varchar(255),
+ primary key (spiritID)
+);
+ 
+create table RECIPES (
+ recipeID int unique auto_increment not null,
+ name varchar(255),
+ additional_ingredients mediumblob
+);
+ 
+create table USED_IN (
+ spirit int,
+ recipeID int,
+ amount varchar(255)
+);
+ 
+create table CURRENT_INVENTORY (
+ spiritID int not null,
+ current_count int
+); -->
