@@ -20,7 +20,7 @@ error_reporting(E_ALL);
 
     $mysqli = new mysqli("mysql.eecs.ku.edu", "taylorbauer", "uuth3waN", "taylorbauer");
     $resultSet1 = $mysqli->query("SELECT name, distiller, spiritID FROM SPIRIT ORDER BY distiller ASC");
-    $resultSet2 = $mysqli->query("SELECT name FROM RECIPES");
+    $resultSet2 = $mysqli->query("SELECT name, recipeID FROM RECIPES");
     ?>
     <br>
     <p>
